@@ -24,7 +24,8 @@ export default function Login() {
     }
     if (!Boolean(password)) {
       setPasswordFieldError(true);
-    } else {
+    }
+    if (Boolean(userName) && Boolean(password)) {
       await axios
         .post(
           "http://localhost:3001/api/v1/users/doLogin",
